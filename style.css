@@ -852,3 +852,76 @@ button {
     transform: none;
   }
 }
+
+/* ===== VICTOR GOULART - EFEITOS PREMIUM ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #00e5ff;
+  color: #050505;
+}
+
+/* Brilho ciano nos botões */
+a, button {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+a:hover, button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.28);
+}
+
+/* Cards com efeito ao passar o mouse */
+.card, .project-card, .service-card, .skill-card {
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card:hover,
+.project-card:hover,
+.service-card:hover,
+.skill-card:hover {
+  transform: translateY(-7px);
+  border-color: #00e5ff;
+  box-shadow: 0 8px 30px rgba(0, 229, 255, 0.12);
+}
+
+/* Animação de entrada */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Acessibilidade: respeita quem desativa animações */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
